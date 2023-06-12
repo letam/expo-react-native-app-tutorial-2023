@@ -14,6 +14,11 @@ import EmojiSticker from "./components/EmojiSticker";
 
 const PlaceholderImage = require("./assets/images/background-image.png");
 
+// FIXME need reanimated update, see https://github.com/software-mansion/react-native-reanimated/issues/3355
+if (typeof window !== "undefined" && !window._frameTimestamp) {
+  window._frameTimestamp = null;
+}
+
 export default function App() {
   const [showAppOptions, setShowAppOptions] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
